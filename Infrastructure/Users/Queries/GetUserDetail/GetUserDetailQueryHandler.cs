@@ -21,12 +21,12 @@ namespace Infrastructure.Users.Queries.GetUserDetail
         public async Task<UserVm> Handle(GetUserDetailQuery request, CancellationToken cancellationToken)
         {
             var entity = await _context.Users
-                .Where(x => x.Password == request.Password && x.Email == request.Email)
+                .Where(x => x.Id == request.UserId)
                 .FirstOrDefaultAsync();
 
             if (entity == null)
             {
-                throw new NotFoundException(nameof(User), request.Email);
+                throw new NotFoundException(nameof(User), request.UserId);
             }
 
             return _mapper.Map<UserVm>(entity);

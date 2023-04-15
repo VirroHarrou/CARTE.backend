@@ -5,7 +5,6 @@ namespace Infrastructure.Users.Queries.GetUserDetail
 {
     public class GetUserDetailQuery : IRequest<UserVm>
     {
-        public string Password { get; set; }
-        public string Email { get; set; }
+        public Guid UserId { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace Infrastructure.Mappings
 {
-    public class AssemblyMappingProfile : Profile //разобраться в том что тут происходит
+    public class AssemblyMappingProfile : Profile
     {
         public AssemblyMappingProfile(Assembly assembly) =>
             ApplyMappingFromAssembly(assembly);

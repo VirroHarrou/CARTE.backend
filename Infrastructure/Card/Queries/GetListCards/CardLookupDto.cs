@@ -9,7 +9,7 @@ namespace Infrastructure.Card.Queries.GetListCards
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string ImageUrl { get; set; }
+        public List<string> ImageUrls { get; set; }
 
         public void Mapping(Profile profile)
         {
@@ -20,8 +20,8 @@ namespace Infrastructure.Card.Queries.GetListCards
                 opt => opt.MapFrom(x => x.Name))
                 .ForMember(x => x.Surname,
                 opt => opt.MapFrom(x => x.Surname))
-                .ForMember(x => x.ImageUrl,
-                opt => opt.MapFrom(x => x.ImageUrls.FirstOrDefault()));
+                .ForMember(x => x.ImageUrls,
+                opt => opt.MapFrom(x => x.ImageUrls));
         }
     }
 }
