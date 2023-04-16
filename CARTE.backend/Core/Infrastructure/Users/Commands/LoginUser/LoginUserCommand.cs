@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Infrastructure.Users.Commands.LoginUser
+namespace CARTE.backend.Core.Infrastructure.Users.Commands.LoginUser
 {
     public class LoginUserCommand : IRequest<Guid>
     {

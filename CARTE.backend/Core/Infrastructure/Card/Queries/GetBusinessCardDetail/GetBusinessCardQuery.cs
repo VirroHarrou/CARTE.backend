@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Infrastructure.Card.Queries.GetBusinessCardDetail
+namespace CARTE.backend.Core.Infrastructure.Card.Queries.GetBusinessCardDetail
 {
     public class GetBusinessCardQuery : IRequest<BusinessCardVm>
     {

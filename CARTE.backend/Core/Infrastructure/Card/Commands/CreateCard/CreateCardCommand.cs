@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Infrastructure.Card.Commands.CreateCard
+namespace CARTE.backend.Core.Infrastructure.Card.Commands.CreateCard
 {
     public class CreateCardCommand : IRequest<Guid>
     {

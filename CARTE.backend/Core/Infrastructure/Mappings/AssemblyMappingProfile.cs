@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using System.Reflection;
 
-namespace Infrastructure.Mappings
+namespace CARTE.backend.Core.Infrastructure.Mappings
 {
     public class AssemblyMappingProfile : Profile
     {

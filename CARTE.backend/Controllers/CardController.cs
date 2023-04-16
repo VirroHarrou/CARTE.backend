@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Infrastructure.Card.Commands.CreateCard;
-using Infrastructure.Card.Commands.DeleteCard;
-using Infrastructure.Card.Commands.UpdateCard;
-using Infrastructure.Card.Queries.GetBusinessCardDetail;
-using Infrastructure.Card.Queries.GetListCards;
+using CARTE.backend.Core.Infrastructure.Card.Commands.CreateCard;
+using CARTE.backend.Core.Infrastructure.Card.Commands.UpdateCard;
+using CARTE.backend.Core.Infrastructure.Card.Queries.GetBusinessCardDetail;
+using CARTE.backend.Core.Infrastructure.Card.Queries.GetListCards;
+using CARTE.backend.Core.Infrastructure.Card.Commands.DeleteCard;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CARTE.backend.Controllers

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Domain.Models;
-using Infrastructure.Mappings;
+using CARTE.backend.Core.Domain.Models;
+using CARTE.backend.Core.Infrastructure.Mappings;
 
-namespace Infrastructure.Users.Queries.GetUserDetail
+namespace CARTE.backend.Core.Infrastructure.Users.Queries.GetUserDetail
 {
     public class UserVm : IMapWith<User>
     {

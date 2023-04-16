@@ -1,9 +1,10 @@
-﻿using Domain.Interfaces;
-using Domain.Models;
-using Infrastructure.CustomExceptions;
+﻿using CARTE.backend.Core.Domain.Interfaces;
+using CARTE.backend.Core.Domain.Models;
+using CARTE.backend.Core.Infrastructure.CustomExceptions;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Users.Commands.LoginUser
+namespace CARTE.backend.Core.Infrastructure.Users.Commands.LoginUser
 {
     public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, Guid>
     {
@@ -15,9 +16,10 @@ namespace Infrastructure.Users.Commands.LoginUser
         public async Task<Guid> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
             var entity = await _context.Users
-                .FindAsync(new object[] { request.Email }, cancellationToken);
+                .Where(x => x.Password == request.Password && x.Email == request.Email)
+                .FirstOrDefaultAsync(cancellationToken);
 
-            if(entity == null || entity.Password != request.Password)
+            if (entity == null)
                 throw new NotFoundException(nameof(User), request.Email);
 
             return entity.Id;

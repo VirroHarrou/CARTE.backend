@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Card.Queries.GetListCards
+﻿namespace CARTE.backend.Core.Infrastructure.Card.Queries.GetListCards
 {
     public class CardsListVm
     {

@@ -1,4 +1,4 @@
-﻿namespace Domain.Models
+﻿namespace CARTE.backend.Core.Domain.Models
 {
     public class User
     {

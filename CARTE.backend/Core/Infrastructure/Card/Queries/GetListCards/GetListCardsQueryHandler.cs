@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Domain.Interfaces;
+using CARTE.backend.Core.Domain.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Card.Queries.GetListCards
+namespace CARTE.backend.Core.Infrastructure.Card.Queries.GetListCards
 {
     public class GetListCardsQueryHandler : IRequestHandler<GetListCardsQuery, CardsListVm>
     {
@@ -20,7 +20,7 @@ namespace Infrastructure.Card.Queries.GetListCards
         public async Task<CardsListVm> Handle(GetListCardsQuery request, CancellationToken cancellationToken)
         {
             var cardQuery = await _context.Cards
-                .Where(x => x.Id == request.Id)
+                .Where(x => x.UserId == request.Id)
                 .ProjectTo<CardLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 

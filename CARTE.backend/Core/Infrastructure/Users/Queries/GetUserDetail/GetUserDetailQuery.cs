@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System.ComponentModel;
 
-namespace Infrastructure.Users.Queries.GetUserDetail
+namespace CARTE.backend.Core.Infrastructure.Users.Queries.GetUserDetail
 {
     public class GetUserDetailQuery : IRequest<UserVm>
     {

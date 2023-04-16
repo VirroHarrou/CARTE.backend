@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Infrastructure.Mappings
+namespace CARTE.backend.Core.Infrastructure.Mappings
 {
     public interface IMapWith<T>
     {

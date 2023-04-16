@@ -1,16 +1,16 @@
-﻿using Domain.Interfaces;
-using Domain.Models;
-using Infrastructure.CustomExceptions;
+﻿using CARTE.backend.Core.Domain.Interfaces;
+using CARTE.backend.Core.Domain.Models;
+using CARTE.backend.Core.Infrastructure.CustomExceptions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Card.Commands.UpdateCard
+namespace CARTE.backend.Core.Infrastructure.Card.Commands.UpdateCard
 {
     public class UpdateCardCommandHandler : IRequestHandler<UpdateCardCommand>
     {
         private readonly IBusinessCardContext _context;
 
-        public UpdateCardCommandHandler(IBusinessCardContext context) => 
+        public UpdateCardCommandHandler(IBusinessCardContext context) =>
             _context = context;
 
         public async Task Handle(UpdateCardCommand request, CancellationToken cancellationToken)
@@ -18,7 +18,7 @@ namespace Infrastructure.Card.Commands.UpdateCard
             var entity = await _context.Cards
                 .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
 
-            if(entity == null || entity.UserId != request.UserId)
+            if (entity == null || entity.UserId != request.UserId)
             {
                 throw new NotFoundException(nameof(BusinessCard), request.Id);
             }

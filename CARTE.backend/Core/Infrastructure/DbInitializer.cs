@@ -1,6 +1,6 @@
-﻿using Domain;
+﻿using CARTE.backend.Core.Domain;
 
-namespace Infrastructure
+namespace CARTE.backend.Core.Infrastructure
 {
     public class DbInitializer
     {

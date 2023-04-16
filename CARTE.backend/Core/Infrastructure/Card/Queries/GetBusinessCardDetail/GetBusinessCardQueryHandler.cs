@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using Domain.Interfaces;
-using Domain.Models;
-using Infrastructure.CustomExceptions;
+using CARTE.backend.Core.Domain.Interfaces;
+using CARTE.backend.Core.Domain.Models;
+using CARTE.backend.Core.Infrastructure.CustomExceptions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Card.Queries.GetBusinessCardDetail
+namespace CARTE.backend.Core.Infrastructure.Card.Queries.GetBusinessCardDetail
 {
     public class GetBusinessCardQueryHandler : IRequestHandler<GetBusinessCardQuery, BusinessCardVm>
     {

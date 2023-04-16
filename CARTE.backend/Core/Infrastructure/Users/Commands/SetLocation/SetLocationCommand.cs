@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Infrastructure.Users.Commands.SetLocation
+namespace CARTE.backend.Core.Infrastructure.Users.Commands.SetLocation
 {
     public class SetLocationCommand : IRequest
     {

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Domain.Models;
-using Infrastructure.Mappings;
+using CARTE.backend.Core.Domain.Models;
+using CARTE.backend.Core.Infrastructure.Mappings;
 
-namespace Infrastructure.Card.Queries.GetBusinessCardDetail
+namespace CARTE.backend.Core.Infrastructure.Card.Queries.GetBusinessCardDetail
 {
     public class BusinessCardVm : IMapWith<BusinessCard>
     {

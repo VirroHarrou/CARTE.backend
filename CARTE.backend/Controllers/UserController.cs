@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Infrastructure.Users.Commands.CreateUser;
-using Infrastructure.Users.Commands.LoginUser;
-using Infrastructure.Users.Queries.GetUserDetail;
+using CARTE.backend.Core.Infrastructure.Users.Commands.CreateUser;
+using CARTE.backend.Core.Infrastructure.Users.Queries.GetUserDetail;
+using CARTE.backend.Core.Infrastructure.Users.Commands.LoginUser;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CARTE.backend.Controllers

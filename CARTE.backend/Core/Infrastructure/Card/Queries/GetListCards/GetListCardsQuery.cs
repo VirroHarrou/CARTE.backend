@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Card.Queries.GetListCards
+namespace CARTE.backend.Core.Infrastructure.Card.Queries.GetListCards
 {
     public class GetListCardsQuery : IRequest<CardsListVm>
     {

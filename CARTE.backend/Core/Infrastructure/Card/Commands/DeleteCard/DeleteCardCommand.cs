@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Infrastructure.Card.Commands.DeleteCard
+namespace CARTE.backend.Core.Infrastructure.Card.Commands.DeleteCard
 {
     public class DeleteCardCommand : IRequest
     {

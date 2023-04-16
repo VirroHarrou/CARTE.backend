@@ -1,9 +1,9 @@
-﻿using Domain.Interfaces;
-using Domain.Models;
-using Infrastructure.CustomExceptions;
+﻿using CARTE.backend.Core.Domain.Interfaces;
+using CARTE.backend.Core.Domain.Models;
+using CARTE.backend.Core.Infrastructure.CustomExceptions;
 using MediatR;
 
-namespace Infrastructure.Card.Commands.DeleteCard
+namespace CARTE.backend.Core.Infrastructure.Card.Commands.DeleteCard
 {
     public class DeleteCardCommandHandler : IRequestHandler<DeleteCardCommand>
     {

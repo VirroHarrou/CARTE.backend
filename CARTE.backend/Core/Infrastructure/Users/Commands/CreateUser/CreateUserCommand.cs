@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Infrastructure.Users.Commands.CreateUser
+namespace CARTE.backend.Core.Infrastructure.Users.Commands.CreateUser
 {
     public class CreateUserCommand : IRequest<Guid>
     {

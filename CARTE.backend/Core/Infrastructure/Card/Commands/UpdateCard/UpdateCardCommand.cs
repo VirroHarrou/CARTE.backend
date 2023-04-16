@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Infrastructure.Card.Commands.UpdateCard
+namespace CARTE.backend.Core.Infrastructure.Card.Commands.UpdateCard
 {
     public class UpdateCardCommand : IRequest
     {

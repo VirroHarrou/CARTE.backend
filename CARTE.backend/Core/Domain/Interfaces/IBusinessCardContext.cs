@@ -1,7 +1,7 @@
-﻿using Domain.Models;
+﻿using CARTE.backend.Core.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Domain.Interfaces
+namespace CARTE.backend.Core.Domain.Interfaces
 {
     public interface IBusinessCardContext
     {

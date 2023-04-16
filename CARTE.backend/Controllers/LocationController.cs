@@ -1,4 +1,4 @@
-﻿using Infrastructure.Users.Commands.SetLocation;
+﻿using CARTE.backend.Core.Infrastructure.Users.Commands.SetLocation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CARTE.backend.Controllers

@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.CustomExceptions
+﻿namespace CARTE.backend.Core.Infrastructure.CustomExceptions
 {
     public class NotFoundException : Exception
     {
