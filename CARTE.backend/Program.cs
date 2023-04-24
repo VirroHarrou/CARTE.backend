@@ -17,7 +17,7 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DBContext>(opt => opt
-    .UseNpgsql(builder.Configuration.GetConnectionString("DbConnection")));
+    .UseNpgsql(builder.Configuration.GetConnectionString("DBDebugConnection")));
 
 using (var scope = builder.Services.BuildServiceProvider())
 {
@@ -71,6 +71,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCoreAdmin();
 
 var app = builder.Build();
 
@@ -85,5 +86,9 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints => endpoints.MapControllers());
+
+app.UseCoreAdminCustomUrl("Admin");
+app.UseStaticFiles();
+app.UseCoreAdminCustomAuth((serviceProvider) => Task.FromResult(true));
 
 app.Run();
