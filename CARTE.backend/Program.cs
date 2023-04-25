@@ -17,7 +17,7 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DBContext>(opt => opt
-    .UseNpgsql(builder.Configuration.GetConnectionString("DBDebugConnection")));
+    .UseNpgsql(builder.Configuration.GetConnectionString("DbConnection")));
 
 using (var scope = builder.Services.BuildServiceProvider())
 {
