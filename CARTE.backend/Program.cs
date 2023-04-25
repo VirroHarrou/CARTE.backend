@@ -30,6 +30,7 @@ using (var scope = builder.Services.BuildServiceProvider())
     catch (Exception ex)
     {
         var logger = scope.GetRequiredService<ILogger<Program>>();
+        logger.LogError(builder.Configuration.GetConnectionString("DbConnection"));
         logger.LogError(ex, "An error occurred while app initialization");
     }
 }
