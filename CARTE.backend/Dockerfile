@@ -5,13 +5,12 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-
-
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["CARTE.backend/CARTE.backend.csproj", "CARTE.backend/"]
 RUN dotnet restore "CARTE.backend/CARTE.backend.csproj"
-COPY . .
+COPY . . 
+COPY ["bin/Release/net6.0/publish/appsettings.json", "/app/appsettings.json"]
 WORKDIR "/src/CARTE.backend"
 RUN dotnet build "CARTE.backend.csproj" -c Release -o /app/build
 
