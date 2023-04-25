@@ -16,8 +16,19 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connection = builder.Configuration.GetConnectionString("DbConnection");
+if(connection == null || connection == string.Empty)
+{
+    var database = Environment.GetEnvironmentVariable("PGDATABASE");
+    var host = Environment.GetEnvironmentVariable("PGHOST");
+    var user = Environment.GetEnvironmentVariable("PGUSER");
+    var password = Environment.GetEnvironmentVariable("PGPASSWORD");
+    var port = Environment.GetEnvironmentVariable("PGPORT");
+    connection = new string($"User ID={user};Password={password};Host={host};Port={port};Database={database}");
+}
+
 builder.Services.AddDbContext<DBContext>(opt => opt
-    .UseNpgsql(builder.Configuration.GetConnectionString("DbConnection")));
+    .UseNpgsql(connection));
 
 using (var scope = builder.Services.BuildServiceProvider())
 {
@@ -30,7 +41,6 @@ using (var scope = builder.Services.BuildServiceProvider())
     catch (Exception ex)
     {
         var logger = scope.GetRequiredService<ILogger<Program>>();
-        logger.LogError(builder.Configuration.GetConnectionString("DbConnection"));
         logger.LogError(ex, "An error occurred while app initialization");
     }
 }

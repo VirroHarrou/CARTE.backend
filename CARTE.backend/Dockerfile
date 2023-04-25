@@ -10,12 +10,11 @@ WORKDIR /src
 COPY ["CARTE.backend/CARTE.backend.csproj", "CARTE.backend/"]
 RUN dotnet restore "CARTE.backend/CARTE.backend.csproj"
 COPY . . 
-COPY ["bin/Release/net6.0/publish/appsettings.json", "/app/appsettings.json"]
 WORKDIR "/src/CARTE.backend"
 RUN dotnet build "CARTE.backend.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "CARTE.backend.csproj" -c Release -o /app/publish /p:UseAppHost=true
+RUN dotnet publish "CARTE.backend.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
