@@ -16,7 +16,7 @@ namespace CARTE.backend.Core.Infrastructure.Users.Commands.LoginUser
         public async Task<Guid> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
             var entity = await _context.Users
-                .Where(x => x.Password == request.Password && x.Email == request.Email)
+                .Where(x => x.Password == request.Password.GetHashCode().ToString() && x.Email == request.Email)
                 .FirstOrDefaultAsync(cancellationToken);
 
             if (entity == null)
