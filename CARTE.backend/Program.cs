@@ -13,6 +13,7 @@ using CARTE.backend.Core.Infrastructure.Users.Queries.GetUserDetail;
 using CARTE.backend.Core.Infrastructure.Mappings;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using CARTE.backend.Core.Infrastructure.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -91,8 +92,10 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+app.UseCustomExceptionHandler();
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 

@@ -19,7 +19,7 @@ namespace CARTE.backend.Core.Infrastructure.Users.Commands.CreateUser
                 Surname = request.Surname,
                 Name = request.Name,
                 Email = request.Email,
-                Password = request.Password.GetHashCode().ToString()
+                Password = request.Password
             };
 
             await _context.Users.AddAsync(entity, cancellationToken);
